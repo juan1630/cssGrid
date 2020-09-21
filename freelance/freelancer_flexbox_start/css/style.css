@@ -1,0 +1,138 @@
+:root {
+    --mainFont : 'Krub', sans-serif;
+    --white : #ffff;
+    --primary : #FFC107;
+    --secondary : #0097A7;
+    --gray :#757575;
+    --dark: #212121;
+}
+
+/* Declarated the variables in the document */
+html {
+    box-sizing: border-box;
+}
+
+
+*, *:before,  *:after {
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family:  var(--mainFont) ;
+}
+
+
+.main-navigation{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+@media(max-width:768px) {
+    .main-navigation {
+        background-color:  var(--dark);
+    }
+}
+
+
+@media(min-width:768px){
+
+    
+    .main-navigation {
+        flex-direction: row;
+        justify-content: space-between;
+        /* color: var(--dark); */
+    }
+
+}
+
+
+.main-navigation a  {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+}
+.main-navigation a:hover {
+    border-bottom: 1px solid  var(--white);
+}
+
+
+@media(min-width:768px){
+
+    
+    .main-navigation a {
+        margin-bottom: 0;
+        color: var(--dark)
+    }
+
+    .main-navigation a:hover {
+        border-bottom: 1px solid  var(--dark);
+    }
+
+}
+
+.hero {
+    height: 450px;
+    background-image: url('../img/hero.jpg');
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hero::after {
+    content: '';
+    background-color: rgba(0,0,0, .3) ;
+    display: block;
+    top: 0;
+    left: 0 ;
+    right: 0;
+    bottom: 0;
+    position:absolute;
+
+}
+
+
+.hero-content {
+    color: var(--white);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.button {
+    background-color: var(--secondary);
+    padding: .5rem;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: .5rem;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1rem;
+    border:none;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1200px;
+    padding: 2rem;
+    margin: 2rem auto 3rem auto;
+    background-color: var(--white) ;
+    -webkit-box-shadow: -1px 11px 15px -9px rgba(0,0,0,0.82);
+-moz-box-shadow: -1px 11px 15px -9px rgba(0,0,0,0.82);
+box-shadow: -1px 11px 15px -9px rgba(0,0,0,0.82);
+}
