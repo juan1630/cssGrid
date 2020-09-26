@@ -1,106 +1,107 @@
 :root {
-    --mainFont : 'Krub', sans-serif;
-    --white : #ffff;
-    --primary : #FFC107;
-    --secondary : #0097A7;
-    --gray :#757575;
+    --mainFont: 'Krub', sans-serif;
+    --white: #ffff;
+    --primary: #FFC107;
+    --secondary: #0097A7;
+    --gray: #757575;
     --dark: #212121;
 }
 
+
 /* Declarated the variables in the document */
+
 html {
     box-sizing: border-box;
+    min-height: 100%;
 }
 
-
-*, *:before,  *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
-
 body {
-    font-family:  var(--mainFont) ;
+    font-family: var(--mainFont);
+    min-height: 100%;
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 
-
-.main-navigation{
+.main-navigation {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 @media(max-width:768px) {
     .main-navigation {
-        background-color:  var(--dark);
+        background-color: var(--dark);
     }
 }
 
-
-@media(min-width:768px){
-
-    
+@media(min-width:768px) {
     .main-navigation {
         flex-direction: row;
         justify-content: space-between;
         /* color: var(--dark); */
     }
-
 }
 
-
-.main-navigation a  {
+.main-navigation a {
     color: var(--white);
     text-decoration: none;
     font-size: 1.4rem;
     margin-bottom: 1.4rem;
 }
+
 .main-navigation a:hover {
-    border-bottom: 1px solid  var(--white);
+    border-bottom: 1px solid var(--white);
 }
 
-
-@media(min-width:768px){
-
-    
+@media(min-width:768px) {
     .main-navigation a {
         margin-bottom: 0;
         color: var(--dark)
     }
-
     .main-navigation a:hover {
-        border-bottom: 1px solid  var(--dark);
+        border-bottom: 1px solid var(--dark);
     }
+}
 
+h2,
+h3,
+h4 {
+    text-align: center;
+}
+
+h3 {
+    color: var(--secondary);
+    font-weight: 400;
+    font-size: 1.6rem;
 }
 
 .hero {
     height: 450px;
     background-image: url('../img/hero.jpg');
     position: relative;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .hero::after {
     content: '';
-    background-color: rgba(0,0,0, .3) ;
+    background-color: rgba(0, 0, 0, .3);
     display: block;
     top: 0;
-    left: 0 ;
+    left: 0;
     right: 0;
     bottom: 0;
-    position:absolute;
-
+    position: absolute;
 }
-
 
 .hero-content {
     color: var(--white);
@@ -121,18 +122,110 @@ body {
     font-weight: 700;
     text-decoration: none;
     font-size: 1rem;
-    border:none;
+    border: none;
     color: var(--white);
     text-transform: uppercase;
 }
 
-.container{
+p {
+    line-height: 2;
+}
+
+.container {
     margin: 0 auto;
     width: 1200px;
     padding: 2rem;
     margin: 2rem auto 3rem auto;
-    background-color: var(--white) ;
-    -webkit-box-shadow: -1px 11px 15px -9px rgba(0,0,0,0.82);
--moz-box-shadow: -1px 11px 15px -9px rgba(0,0,0,0.82);
-box-shadow: -1px 11px 15px -9px rgba(0,0,0,0.82);
+    background-color: var(--white);
+    -webkit-box-shadow: -1px 11px 15px -9px rgba(0, 0, 0, 0.82);
+    -moz-box-shadow: -1px 11px 15px -9px rgba(0, 0, 0, 0.82);
+    box-shadow: -1px 11px 15px -9px rgba(0, 0, 0, 0.82);
+}
+
+@media(min-width:768px) {
+    .services-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .service {
+        /* flex: 0, 0 calc(33.3% - 1rem); */
+    }
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons {
+    height: 100px;
+    width: 100px;
+    /* display: flex; */
+    background-color: var(--primary);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icons i {
+    font-size: 2rem;
+}
+
+form {
+    background-color: var(--gray);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+@media( min-width:768px) {
+    form {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .form-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .field {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
+
+.field {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.field label {
+    flex: 0 0 90px;
+    color: var(--white);
+    align-items: center;
+}
+
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="email"],
+.field textarea {
+    flex: 1;
+    height: 1.5rem;
+}
+
+.wd-100 {
+    flex: 0 0 100%;
+}
+
+.field textarea {
+    height: 200px;
+}
+
+.submit-form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submit-form input[type="submit"] {
+    width: 20%;
+    cursor: pointer;
 }
